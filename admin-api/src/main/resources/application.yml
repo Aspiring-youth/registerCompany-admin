@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: db, core, admin
+  messages:
+    encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  redis:
+    host: xxxx
+    port: 6379
+#    本地则不带密码
+    password: xxxx
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300
+        max-idle: 16
+        min-idle: 8
+
+server:
+  port: 9306
+
+logging:
+  level:
+    root:  DEBUG
+    org.springframework:  DEBUG
+    org.mybatis:  DEBUG
+    org.admin.api:  DEBUG
+    org.example:  DEBUG
+
+swagger:
+  production: false
